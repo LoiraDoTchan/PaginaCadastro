@@ -7,7 +7,7 @@
         <meta name="description" content>
         <meta name="author" content>
 
-        <title>SlimFit - Login</title>
+        <title>SlimFit - Account</title>
 
         <!-- CSS FILES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +50,7 @@ https://www.tooplate.com/view/2127-little-fashion
 
                         <div class="col-lg-8 mx-auto col-12">
 
-                            <h1 class="hero-title text-center mb-5">Login</h1>
+                            <h1 class="hero-title text-center mb-5">Account</h1>
 
                             <div class="row">
                                 <div class="col-lg-8 col-11 mx-auto">
@@ -58,30 +58,52 @@ https://www.tooplate.com/view/2127-little-fashion
                                         method="post">
 
                                         <div class="form-floating mb-4 p-0">
-                                            <input type="text" name="email"
+                                            <input type="text" name="newName"
                                                 class="form-control"
-                                                placeholder="Email"
+                                                placeholder="Email address"
                                                 required>
-                                            <label for="email">Email</label>
+                                            <label for="email_">Novo
+                                                nome</label>
                                         </div>
-
-                                        <div class="form-floating p-0">
-                                            <input type="password"
-                                                name="senha"
+                                        <br>
+                                        <div class="form-floating mb-4 p-0">
+                                            <input type="text" name="newSurname"
                                                 class="form-control"
-                                                placeholder="Senha" required>
-                                            <label
-                                                for="senha">Senha</label>
+                                                placeholder="Email address"
+                                                required>
+                                            <label for="email_">Novo
+                                                sobrenome</label>
+                                        </div>
+                                        <br>
+                                        <div class="form-floating mb-4 p-0">
+                                            <input type="text" name="newEmail"
+                                                class="form-control"
+                                                placeholder="Email address"
+                                                required>
+                                            <label for="email_">Novo
+                                                email</label>
+                                        </div>
+                                        <br>
+                                        <div class="form-floating mb-4 p-0">
+                                            <input type="text" name="newSenha"
+                                                class="form-control"
+                                                placeholder="Email address"
+                                                required>
+                                            <label for="email_">Nova
+                                                senha</label>
                                         </div>
 
                                         <button type="submit"
-                                            class="btn custom-btn form-control mt-4 mb-3">
-                                            Login
+                                            class="btn custom-btn form-control mt-4 mb-3"
+                                            id="btnChangeSenha">
+                                            Mudar credenciais
                                         </button>
 
-                                        <p class="text-center">Não tem uma
-                                            conta? <a href="sign-up.html">Crie
-                                                uma</a></p>
+                                        <button type="submit"
+                                            class="btn custom-btn form-control mt-4 mb-3"
+                                            id="btnChange">
+                                            Deletar conta
+                                        </button>
 
                                     </form>
                                 </div>

@@ -1,16 +1,34 @@
 <?php
-if(isset ($_POST['email_']) and isset ($_POST['password_'])){
-    $email_ = $_POST['email_'];
-    $password_ = $_POST['password_'];
-    $input = explode(",", file_get_contents("data.txt"));
+$email = NULL;
+$senha = NULL;
+if(isset ($_POST['email']) and isset ($_POST['senha'])){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $conn = new mysqli($servername, $username, $password);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        echo nl2br("Connected successfully\n");
+        $sql = "USE Usuario";
 
-    if(strcmp($email_, $input[0]) == 0 and strcmp($password_, $input[1]) == 0){
-        echo "User found.";
-    }else{
-        echo "Credenciais diferentes!";
+        if ($conn->query($sql) === TRUE) {
+            echo nl2br("Used db usuario successfully\n");
+            //checar se acha o login na tabela Registro dentro do db.
+            //se achar linkar à página de controle do usuário
+            //se não achar falar que o usuário ou senha estão diferentes
+        }
+}else if($email != NULL && $senha != NULL){ //account management
+
+    //button selection
+     if (isset($_POST['btnDeleteAccount'])) {
+    // deletarconta
+     } else if (isset($_POST['btnChange'])){
+    // mudar credenciais
+    //só mudar o que tiver setado
+    //se não tiver nada setado -> dar erro;
     }
 }else{
-    echo "Usuário ou senha vazio!";
+    echo "Email ou senha vazio!";
 }
 
 ?>
