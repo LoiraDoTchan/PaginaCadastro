@@ -1,4 +1,8 @@
 <?php
+function redirect($url) {
+    header('Location: '.$url);
+    die();
+}
 $email = NULL;
 $senha = NULL;
 if(isset ($_POST['email']) and isset ($_POST['senha'])){
@@ -19,21 +23,19 @@ if(isset ($_POST['email']) and isset ($_POST['senha'])){
         if ($conn->query($sql) === TRUE) {
             echo nl2br("Used db usuario successfully\n");
             //checar se acha o login na tabela Registro dentro do db.
-            //se achar linkar à página de controle do usuário
-            //se não achar falar que o usuário ou senha estão diferentes
+            $sql = "select * from Registro where email  = '$email' and senha = '$senha'";
+            $result = mysqli_query($conn, $sql);
+            if ($result->num_rows > 0) {
+                //se achar linkar à página de controle do usuário
+                session_start();
+                $_SESSION['email'] = $email;
+                $_SESSION['senha'] = $senha;
+                redirect("account.html");
+            }else{
+                echo nl2br("Usuário ou senha estão diferentes\n");
+            }
+            
         }
-}else if($email != NULL && $senha != NULL){ //account management
-
-    //button selection
-     if (isset($_POST['btnDeleteAccount'])) {
-    // deletarconta
-     } else if (isset($_POST['btnChange'])){
-    // mudar credenciais
-    //só mudar o que tiver setado
-    //se não tiver nada setado -> dar erro;
-    }
-}else{
-    echo "Email ou senha vazio!";
 }
 
 ?>

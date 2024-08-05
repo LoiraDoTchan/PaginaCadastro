@@ -20,13 +20,20 @@ if(isset ($_POST['nome']) and isset ($_POST['sobrenome']) and isset ($_POST['ema
 
         if ($conn->query($sql) === TRUE) {
             echo nl2br("Used db usuario successfully\n");
-            $sql = "INSERT INTO Registro (nome, sobrenome, email, senha)
-            VALUES ('". $nome . "', '". $sobrenome . "', '" . $email . "', '" . $senha . "')";
+            $sql = "select * from Registro where email  = '$email'";
+            $result = mysqli_query($conn, $sql);
+            if ($result->num_rows === 0) { //conta com esse email não existe, nova conta
+                $sql = "INSERT INTO Registro (nome, sobrenome, email, senha)
+                VALUES ('". $nome . "', '". $sobrenome . "', '" . $email . "', '" . $senha . "')";
 
-            if ($conn->query($sql) === TRUE) {
-                echo nl2br("New record created successfully");
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                if ($conn->query($sql) === TRUE) {
+                    echo nl2br("New record created successfully");
+                } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
+                
+            }else{ //conta com esse email já existe
+                echo nl2br("Uma conta com esse email já está cadastrada!\n");
             }
 
         } else {

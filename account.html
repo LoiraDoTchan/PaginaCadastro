@@ -54,14 +54,13 @@ https://www.tooplate.com/view/2127-little-fashion
 
                             <div class="row">
                                 <div class="col-lg-8 col-11 mx-auto">
-                                    <form action="login.php" role="form"
-                                        method="post">
+                                    <form role="form" method="post"
+                                        action="account.php">
 
                                         <div class="form-floating mb-4 p-0">
                                             <input type="text" name="newName"
                                                 class="form-control"
-                                                placeholder="Email address"
-                                                required>
+                                                placeholder="Email address">
                                             <label for="email_">Novo
                                                 nome</label>
                                         </div>
@@ -69,8 +68,7 @@ https://www.tooplate.com/view/2127-little-fashion
                                         <div class="form-floating mb-4 p-0">
                                             <input type="text" name="newSurname"
                                                 class="form-control"
-                                                placeholder="Email address"
-                                                required>
+                                                placeholder="Email address">
                                             <label for="email_">Novo
                                                 sobrenome</label>
                                         </div>
@@ -78,8 +76,7 @@ https://www.tooplate.com/view/2127-little-fashion
                                         <div class="form-floating mb-4 p-0">
                                             <input type="text" name="newEmail"
                                                 class="form-control"
-                                                placeholder="Email address"
-                                                required>
+                                                placeholder="Email address">
                                             <label for="email_">Novo
                                                 email</label>
                                         </div>
@@ -87,23 +84,20 @@ https://www.tooplate.com/view/2127-little-fashion
                                         <div class="form-floating mb-4 p-0">
                                             <input type="text" name="newSenha"
                                                 class="form-control"
-                                                placeholder="Email address"
-                                                required>
+                                                placeholder="Email address">
                                             <label for="email_">Nova
                                                 senha</label>
                                         </div>
 
-                                        <button type="submit"
+                                        <input type="submit"
                                             class="btn custom-btn form-control mt-4 mb-3"
-                                            id="btnChangeSenha">
-                                            Mudar credenciais
-                                        </button>
+                                            name="action"
+                                            value="Mudar credenciais" />
 
-                                        <button type="submit"
+                                        <input type="submit"
                                             class="btn custom-btn form-control mt-4 mb-3"
-                                            id="btnChange">
-                                            Deletar conta
-                                        </button>
+                                            name="action"
+                                            value="Deletar conta" />
 
                                     </form>
                                 </div>
